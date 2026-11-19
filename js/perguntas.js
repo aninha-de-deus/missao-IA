@@ -1,4 +1,4 @@
-c
+
 export const perguntas = [
     {
         enunciado: "Assim que sai da escola, você se depara com uma nova tecnologia: um chat que consegue responder dúvidas e também gerar imagens e áudios hiper-realistas. Qual é o seu primeiro pensamento?",
