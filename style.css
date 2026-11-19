@@ -4,7 +4,6 @@
     --cor-secundaria: #212333; 
     --cor-destaque: #2BDEFD;
     --cor-texto: #D7F9FF;
-
 }
 
 body {
@@ -43,7 +42,7 @@ button:hover{
 }
 
 .caixa-resultado {
-    display: nome;
+    display: none;
 }
 
 .caixa-resultado.mostrar {

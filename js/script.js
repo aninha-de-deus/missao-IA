@@ -25,6 +25,7 @@ function iniciaJogo() {
     caixaResultado.classList.remove("mostrar");
     mostraPergunta();
 }
+
 function mostraPergunta() {
     if(atual >= perguntas.length){
         mostraResultado();
@@ -45,43 +46,36 @@ function mostraAlternativas(){
     }
 }
 
-function respostaSelecionada(opcaoSelecionada){
-    const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
-    historiaFinal += afirmacoes + " ";
-    atual++;
-    mostraPergunta();
-}
-
 function mostraResultado(){
     caixaPerguntas.textContent = "Em 2049...";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
     caixaResultado.classList.add("mostrar");
-    botaoJogarNovamente.addEventListener("click", jogaNovamente); 
+    botaoJogarNovamente.addEventListener("click", jogaNovamente);
 }
 
 function respostaSelecionada(opcaoSelecionada) {
     const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
     historiaFinal += afirmacoes + " ";
-    if (opcaoSelecionada.proxima  !== undefinec) {
+    if (opcaoSelecionada.proxima !== undefined) {
         atual = opcaoSelecionada.proxima;
     } else {
         mostraResultado();
         return;
     }
     mostraPergunta();
-} 
+}
 
 function jogaNovamente() {
     atual = 0;
     historiaFinal = "";
-    caixaResultado.classList.remove ("mostrar");
+    caixaResultado.classList.remove("mostrar");
     mostraPergunta();
 }
 
-function substituiNome () {
+function substituiNome() {
     for (const pergunta of perguntas) {
-        pergunta.enunciado = pergunta.enunciado.replace(/voce/g, nome);
+        pergunta.enunciado = pergunta.enunciado.replace(/você/g, nome);
     }
 }
 
